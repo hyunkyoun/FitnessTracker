@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import calendar from '../screens/calendar';
 import food from '../screens/food';
-import settings from '../screens/settings';
+import profile from '../screens/profile';
 import workout from '../screens/workout';
 
 const Tab = createBottomTabNavigator();
@@ -35,14 +35,11 @@ const Tabs = () => {
                             source={require('../assets/icons/calendar.png')} 
                             resizeMode='contain'
                             style={{
-                                width: 25, 
-                                height: 25, 
+                                width: 40, 
+                                height: 40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
-                        <Text
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>
-                                Calendar</Text>
                     </View>
                 ),
             }}/>
@@ -55,14 +52,11 @@ const Tabs = () => {
                             source={require('../assets/icons/workout.png')} 
                             resizeMode='contain'
                             style={{
-                                width: 25, 
-                                height: 25, 
+                                width: 40, 
+                                height: 40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
-                        <Text
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>
-                                Workout</Text>
                     </View>
                 ),
             }}/>
@@ -75,34 +69,28 @@ const Tabs = () => {
                             source={require('../assets/icons/food.png')} 
                             resizeMode='contain'
                             style={{
-                                width: 25, 
-                                height: 25, 
+                                width: 35, 
+                                height: 35,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
-                        <Text
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>
-                                Food</Text>
                     </View>
                 ),
             }}/>
 
 {/* Settings */}
-            <Tab.Screen name = "Settings" component={settings} options={{
+            <Tab.Screen name = "Profile" component={profile} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image 
-                            source={require('../assets/icons/settings.png')} 
+                            source={require('../assets/icons/profile.png')} 
                             resizeMode='contain'
                             style={{
-                                width: 25, 
-                                height: 25, 
+                                width: 35, 
+                                height: 35, 
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
-                        <Text
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>
-                                Settings</Text>
                     </View>
                 ),
             }}/>
