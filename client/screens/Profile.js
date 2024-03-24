@@ -1,8 +1,8 @@
 import {React, useState} from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView, TouchableOpacity, Switch, Image, ScrollView } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
-import DefaultImage from '../client/assets/icons/defaultProfileImage.png';
-import colorImage from '../client/assets/icons/gradientwheel.png';
+import DefaultImage from '../assets/icons/defaultProfileImage.png';
+import colorImage from '../assets/icons/gradientwheel.png';
 
 const PROFILE_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
 const GRADIENT_WHEEL = Image.resolveAssetSource(colorImage).uri;
