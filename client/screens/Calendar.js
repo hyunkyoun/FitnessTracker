@@ -9,6 +9,7 @@ const Calendar = ({navigation}) => {
     const swiper = React.useRef();
     const [value, setValue] = React.useState(new Date());
     const [week, setWeek] = React.useState(0);
+    const today = moment().format("MMM Do YY");
 
     const weeks = React.useMemo(() => {
         const start = moment().add(week, 'weeks').startOf('week');
@@ -61,8 +62,8 @@ const Calendar = ({navigation}) => {
                             style={[
                               styles.item,
                               isActive && {
-                                backgroundColor: '#111',
-                                borderColor: '#111',
+                                backgroundColor: '#e32f45',
+                                borderColor: '#e32f45',
                               },
                             ]}>
                             <Text
