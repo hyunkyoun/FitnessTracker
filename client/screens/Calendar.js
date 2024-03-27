@@ -11,12 +11,18 @@ const Calendar = ({navigation}) => {
     const [week, setWeek] = React.useState(0);
     const today = moment().format("MMM Do YY");
 
+    console.log(today + "\n");
+    console.log(week + "\n");
+    console.log(value + "\n");
+
     const weeks = React.useMemo(() => {
         const start = moment().add(week, 'weeks').startOf('week');
     
         return [-1, 0, 1].map(adj => {
           return Array.from({ length: 7 }).map((_, index) => {
             const date = moment(start).add(adj, 'week').add(index, 'day');
+
+            
     
             return {
               weekday: date.format('ddd'),
