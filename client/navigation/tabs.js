@@ -84,7 +84,7 @@ const Tabs = () => {
             }}/>
 
  {/* Add to Calendar Tab */}
-            <Tab.Screen name = "Add" component={add} options={{
+            <Tab.Screen name = "Add to calendar" component={add} options={{
                 tabBarIcon: ({focused}) => (
                     <Image
                         source={require('../assets/icons/plus.png')}

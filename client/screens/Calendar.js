@@ -9,11 +9,7 @@ const Calendar = ({navigation}) => {
     const swiper = React.useRef();
     const [value, setValue] = React.useState(new Date());
     const [week, setWeek] = React.useState(0);
-    const today = moment().format("MMM Do YY");
-
-    console.log(today + "\n");
-    console.log(week + "\n");
-    console.log(value + "\n");
+    const today = moment().format('ddd MMM D YYYY');
 
     const weeks = React.useMemo(() => {
         const start = moment().add(week, 'weeks').startOf('week');
@@ -22,8 +18,6 @@ const Calendar = ({navigation}) => {
           return Array.from({ length: 7 }).map((_, index) => {
             const date = moment(start).add(adj, 'week').add(index, 'day');
 
-            
-    
             return {
               weekday: date.format('ddd'),
               date: date.toDate(),
@@ -38,7 +32,7 @@ const Calendar = ({navigation}) => {
             <View style={styles.picker}>
               <Swiper
                 index={1}
-                ref={swiper}
+                ref={swiper} 
                 loop={false}
                 showsPagination={false}
                 onIndexChanged={ind => {
@@ -58,8 +52,11 @@ const Calendar = ({navigation}) => {
                     style={[styles.itemRow, { paddingHorizontal: 16 }]}
                     key={index}>
                     {dates.map((item, dateIndex) => {
-                      const isActive =
-                        value.toDateString() === item.date.toDateString();
+                      const isActive = value.toDateString() === item.date.toDateString();
+                      const highlightToday = item.date.toDateString() === today;
+
+                      console.log(highlightToday);
+
                       return (
                         <TouchableWithoutFeedback
                           key={dateIndex}
